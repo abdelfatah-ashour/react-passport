@@ -30,7 +30,7 @@ function Passport(passport, app) {
       },
     ),
   );
-
+  console.log(process.env.GOOGLE_CLIENT_ID);
   // Google Strategy
   passport_JS.use(
     new GoogleStrategy(
