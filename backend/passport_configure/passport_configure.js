@@ -23,7 +23,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: `${process.env.BACKEND_BASEURL}/auth/facebook/callback`,
+        callbackURL: `/auth/facebook/callback`,
       },
       (accessToken, refreshToken, profile, cb) => {
         return cb(null, profile); // return profile info
@@ -37,7 +37,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `${process.env.BACKEND_BASEURL}/auth/google/callback`,
+        callbackURL: `/auth/google/callback`,
         passReqToCallback: true,
       },
       async function (request, accessToken, refreshToken, profile, done) {
@@ -52,7 +52,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: `${process.env.BACKEND_BASEURL}/auth/github/callback`,
+        callbackURL: `/auth/github/callback`,
       },
       function (accessToken, refreshToken, profile, done) {
         return done(null, profile);
@@ -66,12 +66,12 @@ function Passport(passport, app) {
   app.get(
     "/auth/facebook/callback",
     passport.authenticate("facebook", {
-      failureRedirect: "/login",
+      failureRedirect: "https://react-passport.vercel.app/login",
       scope: ["profile", "user"],
     }),
     function (req, res) {
       // Successful authentication, redirect home.
-      res.redirect(`${process.env.CLIENT_BASEURL}/`);
+      res.redirect("https://react-passport.vercel.app/");
     },
   );
 
@@ -80,18 +80,18 @@ function Passport(passport, app) {
     "/auth/google",
     passport.authenticate("google", {
       successRedirect: "/auth/google/callback",
-      failureRedirect: `${process.env.CLIENT_BASEURL}}/login"`,
+      failureRedirect: "https://react-passport.vercel.app/login",
       scope: ["profile"],
     }),
   );
   app.get(
     "/auth/google/callback",
     passport.authenticate("google", {
-      failureRedirect: `${process.env.CLIENT_BASEURL}}/login"`,
+      failureRedirect: "https://react-passport.vercel.app/login",
     }),
     (req, res) => {
       // Successful authentication, redirect home.
-      res.redirect(`${process.env.CLIENT_BASEURL}/`);
+      res.redirect("https://react-passport.vercel.app/");
     },
   );
 
@@ -100,10 +100,12 @@ function Passport(passport, app) {
 
   app.get(
     "/auth/github/callback",
-    passport.authenticate("github", { failureRedirect: "/login" }),
+    passport.authenticate("github", {
+      failureRedirect: "https://react-passport.vercel.app/login",
+    }),
     function (req, res) {
       // Successful authentication, redirect home.
-      res.redirect(`${process.env.CLIENT_BASEURL}/`);
+      res.redirect("https://react-passport.vercel.app/");
     },
   );
 }

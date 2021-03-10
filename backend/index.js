@@ -17,7 +17,7 @@ const passport = require("passport");
 // middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_BASEURL,
+    origin: "https://react-passport.vercel.app",
     methods: ["GET,PUT,PATCH,POST,DELETE"],
     credentials: true,
     path: "/",
