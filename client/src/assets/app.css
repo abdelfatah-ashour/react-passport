@@ -1,0 +1,18 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.App {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #f1f1f1 !important;
+}
+/*# sourceMappingURL=app.css.map */

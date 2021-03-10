@@ -1,0 +1,446 @@
+.login,
+.register {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .root-to-home,
+.register .root-to-home {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.login .root-to-home:hover a,
+.register .root-to-home:hover a {
+  color: #101010;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login .container-form,
+.register .container-form {
+  width: 75%;
+  min-height: 70vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fdfdfd;
+  -webkit-box-shadow: 0 0 10px #e2e2e2;
+          box-shadow: 0 0 10px #e2e2e2;
+  padding: 0 0.5rem;
+}
+
+.login .container-form .page-title,
+.register .container-form .page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #ffee00;
+  padding: 0.2rem 0.5rem;
+  line-height: 1.1;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  border-radius: 0.5rem;
+}
+
+.login .container-form form,
+.register .container-form form {
+  width: 45%;
+  min-height: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+.login .container-form form .login-social,
+.register .container-form form .login-social {
+  min-height: 3rem;
+  border-bottom: 2px solid #f1f1f1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+
+.login .container-form form .login-social:last-of-type,
+.register .container-form form .login-social:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.login .container-form form .login-social span,
+.register .container-form form .login-social span {
+  color: #f1f1f1;
+}
+
+.login .container-form form .login-social span:hover,
+.register .container-form form .login-social span:hover {
+  text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login .container-form form .group-form,
+.register .container-form form .group-form {
+  width: 100%;
+  min-height: 4rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.login .container-form form .group-form label,
+.register .container-form form .group-form label {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.login .container-form form .group-form input,
+.register .container-form form .group-form input {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.login .container-form form .group-submit,
+.register .container-form form .group-submit {
+  width: 100%;
+  min-height: 4rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.login .container-form form .group-submit .btn,
+.register .container-form form .group-submit .btn {
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 50%;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.login .container-form form .group-submit .btn:hover,
+.register .container-form form .group-submit .btn:hover {
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login .container-form form .group-submit .btn:active,
+.register .container-form form .group-submit .btn:active {
+  background-color: #2929ff;
+  color: #f1f1f1;
+}
+
+.login .container-form form .group-submit span,
+.register .container-form form .group-submit span {
+  font-size: 14px;
+}
+
+.login .container-form .break-line,
+.register .container-form .break-line {
+  position: relative;
+  width: 10%;
+  min-height: 2rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+}
+
+.login .container-form .break-line span,
+.register .container-form .break-line span {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.3rem;
+  color: #000;
+}
+
+.login .container-form .container-social-media,
+.register .container-form .container-social-media {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.login .container-form .container-social-media a,
+.register .container-form .container-social-media a {
+  width: 100%;
+  height: 3rem;
+  color: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+
+.login .container-form .container-social-media a:hover,
+.register .container-form .container-social-media a:hover {
+  cursor: pointer;
+  background-color: #f1f1f1 !important;
+  color: #101010;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login .container-form .container-social-media a .icon,
+.register .container-form .container-social-media a .icon {
+  width: 10%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.login .container-form .container-social-media a .main-social,
+.register .container-form .container-social-media a .main-social {
+  height: 100%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.3rem;
+  font-size: 14px;
+}
+
+.login .container-form .container-social-media a .main-social:hover b,
+.register .container-form .container-social-media a .main-social:hover b {
+  text-decoration: underline;
+}
+
+.login .container-form .container-social-media a .main-social b,
+.register .container-form .container-social-media a .main-social b {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .login .container-form,
+  .register .container-form {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+    width: 100%;
+  }
+  .login .container-form form,
+  .register .container-form form {
+    width: 100%;
+  }
+  .login .container-form .break-line,
+  .register .container-form .break-line {
+    width: 100%;
+  }
+  .login .container-form .container-social-media,
+  .register .container-form .container-social-media {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .login .container-form,
+  .register .container-form {
+    width: 100% !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  .login .container-form form,
+  .register .container-form form {
+    width: 100% !important;
+  }
+  .login .container-form .break-line,
+  .register .container-form .break-line {
+    width: 100% !important;
+  }
+  .login .container-form .container-social-media,
+  .register .container-form .container-social-media {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .login .container-form,
+  .register .container-form {
+    width: 100% !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .login .container-form form,
+  .register .container-form form {
+    width: 45% !important;
+  }
+  .login .container-form .break-line,
+  .register .container-form .break-line {
+    width: 10% !important;
+  }
+  .login .container-form .container-social-media,
+  .register .container-form .container-social-media {
+    width: 45% !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .login .container-form,
+  .register .container-form {
+    width: 100% !important;
+  }
+  .login .container-form form,
+  .register .container-form form {
+    width: 45% !important;
+  }
+  .login .container-form .break-line,
+  .register .container-form .break-line {
+    width: 10% !important;
+  }
+  .login .container-form .container-social-media,
+  .register .container-form .container-social-media {
+    width: 45% !important;
+  }
+}
+/*# sourceMappingURL=form.css.map */
