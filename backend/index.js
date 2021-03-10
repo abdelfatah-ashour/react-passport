@@ -17,9 +17,9 @@ const passport = require("passport");
 // middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_BASEURL, // allow to server to accept request from different origin
-    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"],
-    credentials: true, // allow session cookie from browser to pass through
+    origin: process.env.CLIENT_BASEURL,
+    methods: ["GET,PUT,PATCH,POST,DELETE"],
+    credentials: true,
     path: "/",
   }),
 );
