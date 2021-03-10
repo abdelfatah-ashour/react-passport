@@ -23,8 +23,11 @@ export default function Login() {
       .then(({ data }) => {
         toast.success(data.message);
       })
-      .catch(({ response }) => {
-        toast.error(response.data.message);
+      .catch((response) => {
+        if (response) {
+          toast.error(response.data.message);
+          console.log(response);
+        }
       });
   };
 
@@ -72,7 +75,7 @@ export default function Login() {
         <div className="container-social-media">
           <a
             className="login-social"
-            href="https://react-passport.herokuapp.com/auth/google"
+            href="https://react-passport.herokuapp.com/api/auth/google"
             style={{ backgroundColor: "rgb(232 34 34)" }}
           >
             <span className="icon">
@@ -84,7 +87,7 @@ export default function Login() {
           </a>
           <a
             className="login-social"
-            href="https://react-passport.herokuapp.com/auth/facebook"
+            href="https://react-passport.herokuapp.com/api/auth/facebook"
             style={{ backgroundColor: "rgb(56 56 144)" }}
           >
             <span className="icon">
@@ -96,7 +99,7 @@ export default function Login() {
           </a>
           <a
             className="login-social"
-            href="https://react-passport.herokuapp.com/auth/github"
+            href="https://react-passport.herokuapp.com/api/auth/github"
             style={{ backgroundColor: "rgb(14 8 8)" }}
           >
             <span className="icon">

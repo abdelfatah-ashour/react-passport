@@ -30,7 +30,7 @@ function Passport(passport, app) {
       },
     ),
   );
-  console.log(process.env.GOOGLE_CLIENT_ID);
+
   // Google Strategy
   passport_JS.use(
     new GoogleStrategy(
@@ -61,7 +61,7 @@ function Passport(passport, app) {
   );
 
   // facebook routes
-  app.get("/auth/facebook", passport.authenticate("facebook"));
+  app.get("/api/auth/facebook", passport.authenticate("facebook"));
 
   app.get(
     "/auth/facebook/callback",
@@ -77,7 +77,7 @@ function Passport(passport, app) {
 
   // google routes
   app.get(
-    "/auth/google",
+    "/api/auth/google",
     passport.authenticate("google", {
       successRedirect: "/auth/google/callback",
       failureRedirect: "https://react-passport.vercel.app/login",
@@ -91,12 +91,15 @@ function Passport(passport, app) {
     }),
     (req, res) => {
       // Successful authentication, redirect home.
-      res.redirect("https://react-passport.vercel.app/");
+      res.redirect("https://react-passport.vercel.app");
     },
   );
 
   // github routes
-  app.get("/auth/github", passport.authenticate("github", { scope: ["user"] }));
+  app.get(
+    "/api/auth/github",
+    passport.authenticate("github", { scope: ["user"] }),
+  );
 
   app.get(
     "/auth/github/callback",
@@ -105,7 +108,7 @@ function Passport(passport, app) {
     }),
     function (req, res) {
       // Successful authentication, redirect home.
-      res.redirect("https://react-passport.vercel.app/");
+      res.redirect("https://react-passport.vercel.app");
     },
   );
 }
