@@ -23,7 +23,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: `/auth/facebook/callback`,
+        callbackURL: `https://react-passport.herokuapp.com/auth/facebook/callback`,
       },
       (accessToken, refreshToken, profile, cb) => {
         return cb(null, profile); // return profile info
@@ -37,7 +37,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `/auth/google/callback`,
+        callbackURL: `https://react-passport.herokuapp.com/auth/google/callback`,
         passReqToCallback: true,
       },
       async function (request, accessToken, refreshToken, profile, done) {
@@ -52,7 +52,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: `/auth/github/callback`,
+        callbackURL: `https://react-passport.herokuapp.com/auth/github/callback`,
       },
       function (accessToken, refreshToken, profile, done) {
         return done(null, profile);
@@ -61,7 +61,7 @@ function Passport(passport, app) {
   );
 
   // facebook routes
-  app.get("/api/auth/facebook", passport.authenticate("facebook"));
+  app.get("/auth/facebook", passport.authenticate("facebook"));
 
   app.get(
     "/auth/facebook/callback",
@@ -77,7 +77,7 @@ function Passport(passport, app) {
 
   // google routes
   app.get(
-    "/api/auth/google",
+    "/auth/google",
     passport.authenticate("google", {
       successRedirect: "/auth/google/callback",
       failureRedirect: "https://react-passport.vercel.app/login",
@@ -85,7 +85,7 @@ function Passport(passport, app) {
     }),
   );
   app.get(
-    "/auth/google/callback",
+    "/google/callback",
     passport.authenticate("google", {
       failureRedirect: "https://react-passport.vercel.app/login",
     }),
@@ -96,10 +96,7 @@ function Passport(passport, app) {
   );
 
   // github routes
-  app.get(
-    "/api/auth/github",
-    passport.authenticate("github", { scope: ["user"] }),
-  );
+  app.get("/auth/github", passport.authenticate("github", { scope: ["user"] }));
 
   app.get(
     "/auth/github/callback",
