@@ -23,7 +23,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: `https://react-passport.herokuapp.com/auth/facebook/callback`,
+        callbackURL: `/auth/facebook/callback`,
       },
       (accessToken, refreshToken, profile, cb) => {
         return cb(null, profile); // return profile info
@@ -37,7 +37,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `https://react-passport.herokuapp.com/auth/google/callback`,
+        callbackURL: `/auth/google/callback`,
         passReqToCallback: true,
       },
       async function (request, accessToken, refreshToken, profile, done) {
@@ -52,7 +52,7 @@ function Passport(passport, app) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: `https://react-passport.herokuapp.com/auth/github/callback`,
+        callbackURL: `/auth/github/callback`,
       },
       function (accessToken, refreshToken, profile, done) {
         return done(null, profile);
